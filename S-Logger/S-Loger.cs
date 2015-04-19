@@ -14,7 +14,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class FrmMain : Form
     {
         static int number = 0;
 
@@ -29,7 +29,10 @@ namespace WindowsFormsApplication1
 
         private List<double> _valueList1;
 
-        public Form1()
+        // TODO Port 기본값 COM3
+        public string _port = "COM3";
+
+        public FrmMain()
         {
             InitializeComponent();
         }
@@ -62,6 +65,23 @@ namespace WindowsFormsApplication1
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+        
+        // 포트변경
+        private void changePortToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmChangePort _frmChangePort = new FrmChangePort();
+            _frmChangePort.portText.Text = _port;
+
+            _frmChangePort.SendPort += new FrmChangePort.SendPortNum(setPort);
+
+            _frmChangePort.Show();
+        }
+
+        void setPort(string port)
+        {
+            _port = port;
         }
 
         // 그래프 초기 세팅
@@ -104,7 +124,7 @@ namespace WindowsFormsApplication1
             // m_serialPort = new SerialPort("COM3", 19200, Parity.None, 8, StopBits.One);
             m_serialPort = new SerialPort();
 
-            m_serialPort.PortName = "COM3";             // TODO COM3 하드코딩
+            m_serialPort.PortName = _port;             // TODO COM3 하드코딩
             m_serialPort.BaudRate = 19200;
             m_serialPort.Parity = Parity.None;
             m_serialPort.DataBits = 8;
@@ -125,7 +145,7 @@ namespace WindowsFormsApplication1
             //Thread t2 = new Thread(new ThreadStart(getTemper));
             //t2.Start();
 
-
+            // 데이터 가져오기
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000; // 1초
             timer.Tick += new EventHandler(getData);
@@ -249,35 +269,21 @@ namespace WindowsFormsApplication1
         {
             //_valueList1.Add(System.DateTime.Now.Second);
 
-            Debug.WriteLine("data ===================================== " + data);
-
             _valueList1.Add(data);
             DateTime now = DateTime.Now;
 
-            Debug.WriteLine("chart1.Series[0].Points.Count = " + chart1.Series[0].Points.Count);
 
             if (chart1.Series[0].Points.Count > 0)
             {
-                Debug.WriteLine("chart1.Series[0].Points[0].XValue = " + chart1.Series[0].Points[0].XValue);
-                Debug.WriteLine("now.AddSeconds(-60).ToOADate() = " + now.AddSeconds(-60).ToOADate());
-
-                Debug.WriteLine("while = " + (chart1.Series[0].Points[0].XValue < now.AddSeconds(-60).ToOADate()));
 
                 while (chart1.Series[0].Points[0].XValue < now.AddSeconds(-60).ToOADate())
                 {
-                    Debug.WriteLine("I am  in");
                     chart1.Series[0].Points.RemoveAt(0);
-
-                    Debug.WriteLine("chart1.Series[0].Points[0].XValue = " + chart1.Series[0].Points[0].XValue);
-                    Debug.WriteLine("now.AddSeconds(0).ToOADate() = " + now.AddSeconds(0).ToOADate());
 
                     chart1.ChartAreas[0].AxisX.Minimum = chart1.Series[0].Points[0].XValue;
                     chart1.ChartAreas[0].AxisX.Maximum = now.AddSeconds(0).ToOADate();
                 }
             }
-
-            //chart1.ChartAreas[0].AxisX.Minimum = now.AddSeconds(-0.5).ToOADate();
-            //chart1.ChartAreas[0].AxisX.Maximum = now.AddSeconds(+0.5).ToOADate();
 
             chart1.ChartAreas[0].AxisY.Minimum = data - 3; // 최하온도
             chart1.ChartAreas[0].AxisY.Maximum = data + 3; // 최대온도

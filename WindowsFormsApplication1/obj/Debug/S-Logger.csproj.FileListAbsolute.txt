@@ -1,8 +1,0 @@
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\obj\Debug\S-Logger.csproj.GenerateResource.Cache
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-D:\VisualStudio_workspace\S-Logger\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
