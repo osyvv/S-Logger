@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addDeviceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,12 +44,10 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnOpen = new System.Windows.Forms.Button();
-            this.lblInputData = new System.Windows.Forms.Label();
-            this.lblOutputData = new System.Windows.Forms.Label();
-            this.lblMillisecond = new System.Windows.Forms.Label();
+            this.btnStart = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
+            this.lb_Timer = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -149,56 +147,30 @@
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
-            // btnOpen
+            // btnStart
             // 
-            this.btnOpen.Location = new System.Drawing.Point(218, 493);
-            this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(343, 62);
-            this.btnOpen.TabIndex = 2;
-            this.btnOpen.Text = "btnOpen";
-            this.btnOpen.UseVisualStyleBackColor = true;
-            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
-            // 
-            // lblInputData
-            // 
-            this.lblInputData.AutoSize = true;
-            this.lblInputData.Location = new System.Drawing.Point(216, 468);
-            this.lblInputData.Name = "lblInputData";
-            this.lblInputData.Size = new System.Drawing.Size(70, 12);
-            this.lblInputData.TabIndex = 3;
-            this.lblInputData.Text = "lblInputData";
-            // 
-            // lblOutputData
-            // 
-            this.lblOutputData.AutoSize = true;
-            this.lblOutputData.Location = new System.Drawing.Point(344, 468);
-            this.lblOutputData.Name = "lblOutputData";
-            this.lblOutputData.Size = new System.Drawing.Size(79, 12);
-            this.lblOutputData.TabIndex = 3;
-            this.lblOutputData.Text = "lblOutputData";
-            // 
-            // lblMillisecond
-            // 
-            this.lblMillisecond.AutoSize = true;
-            this.lblMillisecond.Location = new System.Drawing.Point(478, 468);
-            this.lblMillisecond.Name = "lblMillisecond";
-            this.lblMillisecond.Size = new System.Drawing.Size(83, 12);
-            this.lblMillisecond.TabIndex = 3;
-            this.lblMillisecond.Text = "lblMillisecond";
+            this.btnStart.Font = new System.Drawing.Font("Gulim", 15F);
+            this.btnStart.Location = new System.Drawing.Point(218, 493);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(343, 62);
+            this.btnStart.TabIndex = 2;
+            this.btnStart.Text = "S-Logger Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.chart1.Legends.Add(legend4);
             this.chart1.Location = new System.Drawing.Point(27, 108);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(754, 318);
             this.chart1.TabIndex = 5;
             this.chart1.Text = "chart1";
@@ -209,21 +181,29 @@
             this.label1.Font = new System.Drawing.Font("Gulim", 20F);
             this.label1.Location = new System.Drawing.Point(277, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 27);
+            this.label1.Size = new System.Drawing.Size(275, 27);
             this.label1.TabIndex = 6;
-            this.label1.Text = "S-Logger Monitering";
+            this.label1.Text = "S-Logger Monitoring";
+            // 
+            // lb_Timer
+            // 
+            this.lb_Timer.AutoSize = true;
+            this.lb_Timer.Font = new System.Drawing.Font("Gulim", 13F);
+            this.lb_Timer.Location = new System.Drawing.Point(356, 450);
+            this.lb_Timer.Name = "lb_Timer";
+            this.lb_Timer.Size = new System.Drawing.Size(80, 18);
+            this.lb_Timer.TabIndex = 7;
+            this.lb_Timer.Text = "00:00:00";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(812, 585);
+            this.Controls.Add(this.lb_Timer);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.lblMillisecond);
-            this.Controls.Add(this.lblOutputData);
-            this.Controls.Add(this.lblInputData);
-            this.Controls.Add(this.btnOpen);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -252,12 +232,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.Button btnOpen;
-        private System.Windows.Forms.Label lblInputData;
-        private System.Windows.Forms.Label lblOutputData;
-        private System.Windows.Forms.Label lblMillisecond;
+        private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_Timer;
     }
 }
 

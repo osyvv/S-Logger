@@ -1,0 +1,25 @@
+'WindowsFormsApplication1.vshost.exe' (CLR v4.0.30319: WindowsFormsApplication1.vshost.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ko_b77a5c561934e089\mscorlib.resources.dll'. Module was built without symbols.
+A first chance exception of type 'System.InvalidOperationException' occurred in mscorlib.dll
+A first chance exception of type 'System.InvalidOperationException' occurred in System.Windows.Forms.DataVisualization.dll
+
+
+
+'WindowsFormsApplication1.vshost.exe' (CLR v4.0.30319: WindowsFormsApplication1.vshost.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ko_b77a5c561934e089\mscorlib.resources.dll'. Module was built without symbols.
+A first chance exception of type 'System.InvalidOperationException' occurred in mscorlib.dll
+A first chance exception of type 'System.InvalidOperationException' occurred in System.Windows.Forms.DataVisualization.dll
+A first chance exception of type 'System.InvalidOperationException' occurred in System.Windows.Forms.DataVisualization.dll
+
+
+
+
+
+data ===================================== 24.5
+chart1.Series[0].Points.Count = 40
+chart1.Series[0].Points[0].XValue = 42113.6905818171
+now.AddSeconds(-60).ToOADate() = 42113.6905832755
+while = True
+I am  in
+'WindowsFormsApplication1.vshost.exe' (CLR v4.0.30319: WindowsFormsApplication1.vshost.exe): Loaded 'C:\Windows\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_ko_b77a5c561934e089\mscorlib.resources.dll'. Module was built without symbols.
+A first chance exception of type 'System.InvalidOperationException' occurred in mscorlib.dll
+A first chance exception of type 'System.InvalidOperationException' occurred in System.Windows.Forms.DataVisualization.dll
+A first chance exception of type 'System.InvalidOperationException' occurred in System.Windows.Forms.DataVisualization.dll
